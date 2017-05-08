@@ -23,10 +23,10 @@ app.prepare()
         server.get('*', (req, res) => {
             return handle(req, res)
         })
-
-        server.listen(4000, (err) => {
+        var port_number = server.listen(process.env.PORT || 4000);
+        server.listen(port_number, (err) => {
             if (err) throw err
-            console.log('> Ready on http://localhost:3000')
+            console.log('> Ready on http://localhost:4000')
         })
     })
     .catch((ex) => {
