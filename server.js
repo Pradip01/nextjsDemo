@@ -5,7 +5,7 @@ const express = require('express')
 const next = require('next')
 // const Contentstack = require('contentstack')
 
-const dev = process.env.NODE_ENV !== 'production'
+const dev = process.env.NODE_ENV || 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 // const _env = require('./config/index');
