@@ -26,18 +26,28 @@ export default class Nav extends React.Component {
               <a style={linkStyle}>Contact</a>
             </Link>
           </li>
+          <li>
+            <Link href="">
+              <a style={linkStyle}>Products</a>
+            </Link>
+            <ul>
+              <li>
+                <a href="/product/contentstack">Contentstack</a>
+              </li>
+            </ul>
+          </li>
         </ul>
             <style jsx>{`
             ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
-            overflow: hidden;
             background-color: #333;
         }
 
             li {
-            float: left;
+            display: inline-block;
+            position:relative;
         }
 
             li a {
@@ -51,6 +61,19 @@ export default class Nav extends React.Component {
             li a:hover {
             background-color: #111;
         }
+        li ul{
+            display:none;
+            position:absolute;
+            left:0;
+            top:100%;
+            z-index:1;
+            background-color:#333;
+            padding:0;
+        }
+        li:hover ul{
+            display:block;
+        }
+
             `}</style>
         </div>
     )
