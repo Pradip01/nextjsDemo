@@ -3,7 +3,8 @@
  */
 const express = require('express')
 const next = require('next')
-// const Contentstack = require('contentstack')
+const Contentstack = require('contentstack')
+const config = require('./config/index')
 
 const dev = process.env.NODE_ENV || 'production'
 const app = next({ dev })
@@ -14,11 +15,16 @@ app.prepare()
     .then(() => {
         const server = express()
 
-       /* server.get('/p/:id', (req, res) => {
-            const actualPage = '/post'
-            const queryParams = { id: req.params.id }
-            app.render(req, res, actualPage, queryParams)
-        })*/
+        /* server.get('/p/:id', (req, res) => {
+         const actualPage = '/post'
+         const queryParams = { id: req.params.id }
+         app.render(req, res, actualPage, queryParams)
+         })*/
+        global['Stack'] = Contentstack.Stack({
+            api_key: config.contentstack.api_key,
+            access_token: config.contentstack.access_token,
+            environment: 'development'
+        });
 
         server.get('*', (req, res) => {
             return handle(req, res)

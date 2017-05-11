@@ -1,15 +1,10 @@
-import Header from './Header'
-import Nav from '../components/nav'
-
-// const layoutStyle = {
-//   margin: 20,
-//   padding: 20,
-//   // border: '1px solid #DDD'
-// }
+import Nav from '../partials/nav'
+import Footer from '../partials/Footer'
 const Layout = (props) => (
   <div id="asdf4534">
       <Nav />
     {props.children}
+      <Footer />
 
       <style jsx>{`
           #asdf4534{

@@ -12,24 +12,16 @@ export default class Nav extends React.Component {
         <div>
         <ul>
           <li>
-            <Link href="/">
-              <a style={linkStyle}>Home</a>
-            </Link>
+              <a href="/" style={linkStyle}>Home</a>
           </li>
           <li>
-            <Link href="/about">
-              <a style={linkStyle}>About</a>
-            </Link>
+              <a href="/about" style={linkStyle}>About</a>
           </li>
           <li>
-            <Link href="/contact">
-              <a style={linkStyle}>Contact</a>
-            </Link>
+              <a href="/contact" style={linkStyle}>Contact</a>
           </li>
           <li>
-            <Link href="">
-              <a style={linkStyle}>Products</a>
-            </Link>
+              <a href="" style={linkStyle}>Products</a>
             <ul>
               <li>
                 <a href="/product/contentstack">Contentstack</a>
